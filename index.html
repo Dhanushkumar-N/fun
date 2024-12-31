@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Happy New Year 2025 🌟</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #ff7eb3, #ff758c, #ff6c6c, #ff6245);
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Overlay Styles */
+        .overlay {
+            background: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            animation: fadeInOverlay 2s ease-in-out forwards;
+        }
+        @keyframes fadeInOverlay {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Header Styling */
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px #fff, 0 0 50px #ff0, 0 0 70px #f09;
+            animation: glow 2s infinite alternate, bounceIn 1s ease-out forwards;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ff4500, 0 0 40px #f06;
+            }
+            to {
+                text-shadow: 0 0 30px #fff, 0 0 50px #ffa500, 0 0 70px #f90;
+            }
+        }
+        @keyframes bounceIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease-out forwards;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Button Styles */
+        button {
+            padding: 15px 40px;
+            font-size: 1.3rem;
+            border: none;
+            background: linear-gradient(45deg, #ff4500, #ffa500);
+            color: #fff;
+            border-radius: 30px;
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.7);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite alternate;
+        }
+        button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #ffa500, #ff4500);
+        }
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(255, 69, 0, 0.7);
+            }
+            to {
+                transform: scale(1.05);
+                box-shadow: 0 0 25px rgba(255, 165, 0, 0.8);
+            }
+        }
+
+        /* Output Section */
+        .output-container {
+            margin-top: 20px;
+            padding: 20px;
+            border: 5px solid #fff;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            display: none;
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Username Styling */
+        .username {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #fffa00;
+            text-shadow: 0 0 10px #ffa500, 0 0 20px #ff4500;
+        }
+
+        /* Fireworks Effect */
+        .fireworks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Confetti */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff0;
+            animation: confettiFall 4s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotate(0);
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+
+        /* Sparkle Effect */
+        .sparkle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, #fff, #ffcc00);
+            animation: sparkleAnimation 1.5s ease-in-out infinite;
+            border-radius: 50%;
+        }
+
+        @keyframes sparkleAnimation {
+            0% {
+                transform: translate(-50%, -50%) scale(0.5);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            p {
+                font-size: 1.2rem;
+            }
+            button {
+                padding: 10px 30px;
+                font-size: 1rem;
+            }
+            .username {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <h1>🎉 Happy New Year 2025! 🎆🎉</h1>
+        <p>🎊 Wishing you a year filled with joy, success, and unforgettable moments! 🎉</p>
+        <button onclick="generateWish()">Generate Your Wish</button>
+        <div class="output-container" id="output"></div>
+    </div>
+
+    <!-- Fireworks Canvas -->
+    <canvas id="fireworksCanvas" class="fireworks"></canvas>
+
+    <!-- New Year Background Music -->
+    <audio id="backgroundMusic" autoplay muted>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Get the background music element
+        const backgroundMusic = document.getElementById('backgroundMusic');
+
+        // Set initial state of background music (muted for autoplay policy)
+        backgroundMusic.muted = true;
+
+        // Wait for user interaction to unmute and start music
+        document.querySelector('button').addEventListener('click', () => {
+            backgroundMusic.muted = false; // Unmute background music
+            backgroundMusic.play(); // Play music after unmuting
+        });
+
+        // Fireworks Animation (same as before)
+        const canvas = document.getElementById('fireworksCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+        function createParticle(x, y) {
+            const colors = ["#ff5f5f", "#ff9b9b", "#ffcc66", "#ffcc99", "#ff7f00"];
+            particles.push({
+                x,
+                y,
+                radius: Math.random() * 4 + 2,
+                alpha: 1,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                dx: (Math.random() - 0.5) * 8,
+                dy: (Math.random() - 0.5) * 8,
+            });
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles = particles.filter(p => p.alpha > 0);
+            for (const particle of particles) {
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${particle.color}, ${particle.alpha})`;
+                ctx.fill();
+                particle.x += particle.dx;
+                particle.y += particle.dy;
+                particle.alpha -= 0.01;
+            }
+        }
+
+        function animateFireworks() {
+            drawParticles();
+            requestAnimationFrame(animateFireworks);
+        }
+
+        setInterval(() => {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height;
+            for (let i = 0; i < 15; i++) createParticle(x, y);
+        }, 500);
+
+        animateFireworks();
+
+        // Generate Personalized Wish
+        function generateWish() {
+            const userName = prompt("Enter your name:");
+            if (!userName) {
+                alert("Please enter your name!");
+                return;
+            }
+
+            const output = document.getElementById('output');
+            output.innerHTML = `
+                <div class="username">Happy New Year, ${userName} 🎉!</div>
+                <p>🎆 Wishing you a year filled with happiness, success, and unforgettable memories! 🎆</p>
+                <p>✨ Let 2025 be your brightest year yet! ✨</p>
+                <p>🌟 May happiness and joy follow you every day! 🌟</p>
+            `;
+            output.style.display = "block";
+        }
+
+        // Create confetti and sparkle effects
+        function createSparkles() {
+            setInterval(() => {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('sparkle');
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1500);
+            }, 300);
+        }
+        createSparkles();
+    </script>
+</body>
+</html>
